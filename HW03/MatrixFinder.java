@@ -6,7 +6,7 @@
 import java.util.Scanner;
 
 public class MatrixFinder {
-	//algo developed my Toot Toot Cabbage, consisting of...
+	//algo developed Toot Toot Cabbage, consisting of...
 	//Bill Ni
 	//Andrew Shao
 	//yours truly, woooobin peco!

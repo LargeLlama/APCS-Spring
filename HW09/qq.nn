@@ -1,0 +1,31 @@
+Wubin Peco
+APCS pd2
+HW09 - chess t h i n g s 
+2018-02-26
+why am i still awake haha
+
+
+2x2
+according to my calculations this ain't possible because once you place one queen, every other available spot is a spot that the queen can move to
+
+3x3
+according to my calculations this also ain't possible b/c once you place two queens, the remaining spots are all spots a queen can move to
+
+4x4
+according to my calculations there are 2 solutions because you can organize the queens by moving them like knights move, and thus you can create two configurations 
+which are just flipped versions of each other
+
+5x5
+according to my calculations there are 5 solutions because you can create a combination for each number of columns by changing the starting position of the 
+first queen, which results in 5 different combinations that are just rotations of each other
+
+6x6
+I could only come up with one solution but I definitely think there are more, for the same reason as above - there are rotations available that are just
+flipped transformations of an already existing solution
+
+7x7
+I could find 7 solutions using the same method as I used for the 5x5 board, as I shifted the original queens starting position up the column, starting from the 
+bottom corner, and since there are 7 columns
+
+8x8
+I found 8 solutions, using the same method for the 7x7 and the 5x5

@@ -1,0 +1,25 @@
+Wubin Peco
+APCS pd02
+hw11 - knight tour tickets are only 39.99 to see them live
+2018-02-28
+ahhhhhhhhhhhhhhhhhhhhhh
+
+Knight's Tour algorithm
+
+recursive solution (similar to queen problem)
+
+if all squares visited
+	return true
+else
+	Try one of the next moves, keeping in mind you can't visit a square already visited
+	if this move doesnt lead to solution
+		backtrack and try another one
+		(knight can have, at most, 8 moves in the center of the board)
+	if no alternatives work (no more possible moves)
+		return false and you done son (no possible solution)
+
+
+this is recursive because we would make a call to the method again, with the state space being changed after each call
+
+this is harder to do by hand, as there are so many possible moves that one can do but a computer can calculate these faster than a person
+I doubt this is the fastest method, as we do not "chop off" moves we know will not work, as mentioned in class, but this is what I came up with

@@ -185,6 +185,7 @@ public class QueenBoard
 
 	System.out.println("Board size: 8x8");
 	QueenBoard d = new QueenBoard(8);
+
 	d.solve();
 	d.printSolution();
   }

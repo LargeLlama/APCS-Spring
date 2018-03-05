@@ -1,17 +1,12 @@
-//Wubin Peco
-//APCS pd2
-//HW 13 nyooom
-//2018-03-05
 /*======================================
-
   class KnightTour
   Animates a Knight's Tour of a square chess board.
 
   Mean execution times for boards of size n*n:
-  n=5   .085s     over 10 executions 
-  n=6   .105s     over 10 executions
-  n=7   .263s     over 10 executions
-  n=8   .281s     over 10 executions
+  n=5   __s    over __ executions 
+  n=6   __s    over __ executions
+  n=7   __s    over __ executions
+  n=8   __s    over __ executions
   ======================================*/
 
 /***
@@ -107,8 +102,6 @@ class TourFinder
 	//primary base case: tour completed
 	if (moves > sideLength * sideLength) {
 		solved = true;
-	    System.out.println( this ); //refresh screen
-		return;
 	} 
 	//other base case: stepped off board or onto visited cell
 	if (board[x][y] != 0) {
@@ -131,17 +124,26 @@ class TourFinder
 	      g . . . b
 	      . h . a .
 	      ======================================*/
-	    findTour( x+1, y+2, moves+1 ); // a
-	    findTour( x+2, y+1, moves+1 ); // b
-	    findTour( x+2, y-1, moves+1 ); // c
-	    findTour( x+1, y-2, moves+1 ); // d
-	    findTour( x-1, y-2, moves+1 ); // e
-	    findTour( x-2, y-1, moves+1 ); // f
-	    findTour( x-2, y+1, moves+1 ); // g
-	    findTour( x-1, y+2, moves+1 ); // h
+		//a	
+		findTour(x + 1, y - 2, moves + 1);
+		//b
+		findTour(x + 2, y - 1, moves + 1);
+		//c
+		findTour(x + 2, y + 1, moves + 1);
+		//d
+	    findTour(x + 1, y + 2, moves + 1);
+		//e
+		findTour(x - 1, y + 2, moves + 1);
+		//f
+		findTour(x - 2, y + 1, moves + 1);
+		//g
+		findTour(x - 2, y - 1, moves + 1);
+		//h
+		findTour(x - 1, y - 2, moves + 1);
 
 	    //If made it this far, path did not lead to tour, so back up.
-		board[x][y] = 0;
+		if (!solved) 
+			board[x][y] = 0;
 
 //	    System.out.println( this ); //refresh screen
 

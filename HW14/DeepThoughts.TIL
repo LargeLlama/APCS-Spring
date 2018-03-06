@@ -1,0 +1,28 @@
+The Boys - Wubin Peco, Bill Nye the Science Guy, and Andrew Shao-lin Monk
+APCS PD02
+HW14 YURDDDDDDDDDDDD
+2018-03-05
+aye yuh aye yuh aye yuh
+
+Section I
+
+Uno) Nope, as some boards have proved impossible to find an open tour, or any kind of tour, even a tour by Rich Brian. These boards include anything less than 5x5 - it
+DO NOT MATTER where we start off, as it's not possible to get a tour. Changing the starting position won't matter for these.
+
+Due) For a closed tour yes, as a closed tour has more specific guidelines and as a result, solutions can be difficult to find for a larger board where there are a bunch 
+of different solutions, but changing the starting position allows one to find the one that will result in a closed tour. As always, anything below a 5x5 is invalid.
+
+Tre) Our sample size is far too small to accurately reach an analysis on this, but we can assume it is exponential as an analysis of the algorithm leads us to believe it
+runs in O(n^2) time, and increasing n leads to exponential growth in time. 
+
+Quattro) It is definitely possible to optimize, as our algorithm tries EVERY possible move, when it's possible to rule some out, as devleoped by Rubin and Tim on Thursday,
+where they limit the number of possible next moves by picking the sqaure with the least possible moves available afterwards. This gets rid of the "dangerous" spots where
+it's easy to get caught in a dead end, while slowly limiting the possible moves for the center of the board, where there are many to begin with.
+
+Section II
+
+For the MAZE 
+
+We came up with an algorithm similar to the one used for knight's tour, where we go thru each possible path until we reach the end, which isn't the most effective but
+we cannot find a better way to lower the state space. Rubin suggested working backwards, but that only works for people - humans can solve a maze faster if they work 
+backwards, but to the computer it's the same thing in reverse, so computational time will essentially be the same.

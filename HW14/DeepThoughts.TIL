@@ -4,6 +4,12 @@ HW14 YURDDDDDDDDDDDD
 2018-03-05
 aye yuh aye yuh aye yuh
 
+Mean execution times for boards of size n*n:
+  n=5   .085s     over 10 executions 
+  n=6   .105s     over 10 executions
+  n=7   .263s     over 10 executions
+  n=8   .281s     over 10 executions
+
 Section I
 
 Uno) Nope, as some boards have proved impossible to find an open tour, or any kind of tour, even a tour by Rich Brian. These boards include anything less than 5x5 - it

@@ -1,4 +1,5 @@
-//Wubin Peco
+//THE BOYS
+//Wubin Peco, Bill Nye the Science Guy, Andrew Shao-lin Monk
 //APCS Pd02
 //HW15 ya yeet
 //2018-03-06
@@ -13,7 +14,17 @@
  * (mazefile is ASCII representation of maze, using symbols below)
  * 
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ *   OKAY SO
+ *   What we do is recursively look for the solution by first making sure the maze isn't solved
+ *   then, we check if the coordinates entered are valid "moves" by...
+ *   1) making sure its within the boundaries of the maze 2d array
+ *   2) making sure its not on a wall or on an already existing placement of the "hero" char
+ *   then we check if it just landed on the '$', meaning it's been solved
+ *   if none of these return true, then we can advance to the next step, which involves moving the char in all four 
+ *   cardinal directions, and running the method again with the same coordinates except each one is either incremented by one
+ *   or decremented by one, but not both at the same time. This prevents diagonal movement, which Mr. Brown stated was NOT
+ *   allowed. 
+ *   This allows backtracking as if one certain combination of paths don't work, it uses another one, and another one, until no solution is found.
  ***/
 
 //enable file I/O
@@ -115,22 +126,36 @@ class MazeSolver
     delay(50); //slow it down enough to be followable
 
     //primary base case
-    if ( /* YOUR AMAZEING CODE HERE */ ) {
-	    /* YOUR AMAZEING CODE HERE */
-    }
+    if (solved) {
+		//YURRRRRRRRD YOU DID IT
+		System.out.print(this);
+		return;
+	}
     //other base case(s)...
-    else if ( /* YOUR AMAZEING CODE HERE */ ) {
-	    /* YOUR AMAZEING CODE HERE */
+    else if ( x > w || y > h || x < 0 || y < 0) {
+		//if its OUT OF BOUNDS SON
+		return;
     }
-    else if ( /* YOUR AMAZEING CODE HERE */ ) {
-	    /* YOUR AMAZEING CODE HERE */
+    else if (maze[x][y] == WALL || maze[x][y] == HERO) {
+	    //U CAN'T RUN INTO A WALL HOMIE
+		return;
     }
-    else if ( /* YOUR AMAZEING CODE HERE */ ) {
-	    /* YOUR AMAZEING CODE HERE */
+    else if (maze[x][y] == ('$')) {
+		//YUH YUH YUH
+		solved = true;
+		return;
     }
     //recursive reduction
     else {
-	    /* YOUR AMAZEING CODE HERE */
+		maze[x][y] = '@';
+		System.out.println(this);
+
+		solve(x, y + 1);
+		solve(x, y - 1);
+		solve(x + 1, y);
+		solve(x - 1, y);
+		
+		System.out.println("NOT SOLVABLE YEET");
     }
   }
 
@@ -156,9 +181,8 @@ public class Maze
 
 	    //drop hero into the maze (coords must be on path)
 	    //comment next line out when ready to randomize startpos
-	    ms.solve( 4, 3 ); 
+	    //ms.solve( 0, 0 ); 
 
-	    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	    //drop our hero into maze at random location on path
 	    //the Tim Diep way:
 	    Random r = new Random();
@@ -170,8 +194,7 @@ public class Maze
 	    }
 
 	    ms.solve( startX, startY );
-	    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    } catch( Exception e ) { 
+	  } catch( Exception e ) { 
 	    System.out.println( "Error reading input file." );
 	    System.out.println( "Usage: java Maze <filename>" ); 
     }

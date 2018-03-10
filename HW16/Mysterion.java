@@ -33,7 +33,7 @@ function Mysterion(a, b, c, arr)
 	//and some actions are very similar, but this is just a shot in the dark
 	
 	
-	public static int medSort(int low, int high, int midPoint, int[] arr) {
+	public static int partition(int low, int high, int midPoint, int[] arr) {
 		int median = arr[midPoint];
 
 		swap(arr, midPoint, high);
@@ -81,8 +81,8 @@ function Mysterion(a, b, c, arr)
 			System.out.print(i + ", ");
 		System.out.println();
 
-		System.out.println("Running medSort!"); 
-		System.out.println(medSort(0, 4, 2, test) + " swaps counted!");
+		System.out.println("Running partition!"); 
+		System.out.println(partition(0, 4, 2, test) + " swaps counted!");
 
 		for (int i : test )
 			System.out.print(i + ", ");
@@ -98,8 +98,8 @@ function Mysterion(a, b, c, arr)
 			System.out.print(i + ", ");
 		System.out.println();
 
-		System.out.println("Running medSort!"); 
-		System.out.println(medSort(0, 4, 2, test1) + " swaps counted!");
+		System.out.println("Running partition!"); 
+		System.out.println(partition(0, 4, 2, test1) + " swaps counted!");
 		
 		System.out.println("State of array afterwards: ");
 		for (int i : test1 )
@@ -115,8 +115,8 @@ function Mysterion(a, b, c, arr)
 			System.out.print(i + ", ");
 		System.out.println();
 
-		System.out.println("Running medSort!"); 
-		System.out.println(medSort(0, 4, 2, test2) + " swaps counted!");
+		System.out.println("Running partition!"); 
+		System.out.println(partition(0, 4, 2, test2) + " swaps counted!");
 		
 		System.out.println("State of array afterwards: ");
 		for (int i : test2 )

@@ -136,7 +136,7 @@ class MazeSolver
 		//if its OUT OF BOUNDS SON
 		return;
     }
-    else if (maze[x][y] == WALL || maze[x][y] == HERO) {
+    else if (maze[x][y] == WALL || maze[x][y] == VISITED_PATH) {
 	    //U CAN'T RUN INTO A WALL HOMIE
 		return;
     }
@@ -147,16 +147,14 @@ class MazeSolver
     }
     //recursive reduction
     else {
-		maze[x][y] = '@';
+		maze[x][y] = VISITED_PATH;
 		System.out.println(this);
 
 		solve(x, y + 1);
 		solve(x, y - 1);
 		solve(x + 1, y);
 		solve(x - 1, y);
-		
-		System.out.println("NOT SOLVABLE YEET");
-    }
+	}
   }
 
   //accessor method to help with randomized drop-in location

@@ -26,7 +26,7 @@
  * 		also it just kinda works even with duplicates lol idk
  *
  *****************************************************/
-
+import java.util.Random;
 public class QuickSort
 {
   //--------------v  HELPER METHODS  v--------------
@@ -68,7 +68,8 @@ public class QuickSort
 
   public static int partition( int arr[], int a, int b)
   {
-	int pivotIndex = a;
+	Random rand = new Random();
+	int pivotIndex = rand.nextInt((b - a) + 1) + a;
     int v = arr[pivotIndex];
 
     swap( arr, pivotIndex, b);

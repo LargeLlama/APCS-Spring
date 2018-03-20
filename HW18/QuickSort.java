@@ -68,8 +68,7 @@ public class QuickSort
 
   public static int partition( int arr[], int a, int b)
   {
-	Random rand = new Random();
-	int pivotIndex = rand.nextInt((b - a) + 1) + a;
+	int pivotIndex = a + (int)(Math.random() * ((b-a)+1));
     int v = arr[pivotIndex];
 
     swap( arr, pivotIndex, b);

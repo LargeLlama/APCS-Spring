@@ -1,3 +1,9 @@
+//GOD'S PLAN - Max Millar and Wubin Peco
+//APCS-2 pd02
+//hw23 ya yeet ya
+//2018-03-22
+//yall vibing with linked lists?
+
 /*****************************************************
  * class LList
  * Implements a linked list of LLNodes, each containing String data
@@ -13,8 +19,8 @@ public class LList implements List //your List interface must be in same dir
     // constructor -- initializes instance vars
     public LList( )
     {
-	_head = null; //at birth, a list has no elements
-	_size = 0;
+		_head = null; //at birth, a list has no elements
+		_size = 0;
     }
 
 
@@ -54,24 +60,42 @@ public class LList implements List //your List interface must be in same dir
 	}
 
 	public String remove(int index) {
+		if ( index < 0 || index >= size() )
+			throw new IndexOutOfBoundsException();
+		if ( index == 0)
+			_head = _head.getNext();
+
+		//thanks to aliasing, creating a tmp variable works haha!
+		LLNode tmp = _head;
+		
+		for(int i = 0; i < index - 1; i++) {
+			tmp = tmp.getNext();
+		}
+		
+		LLNode alsoTmp = _head;
+		
+		for(int i = 0; i < index + 1; i++) {
+			alsoTmp = alsoTmp.getNext();
+		}
+		tmp.setNext(alsoTmp);
 		return "";
 	}
     
     public String get( int index )
     {
-	if ( index < 0 || index >= size() )
-	    throw new IndexOutOfBoundsException();
+		if ( index < 0 || index >= size() )
+			throw new IndexOutOfBoundsException();
 
-	String retVal;
-	LLNode tmp = _head; //create alias to head
+		String retVal;
+		LLNode tmp = _head; //create alias to head
 
-	//walk to desired node
-	for( int i=0; i < index; i++ )
-	    tmp = tmp.getNext();
+		//walk to desired node
+		for( int i=0; i < index; i++ )
+			tmp = tmp.getNext();
 
-	//check target node's cargo hold
-	retVal = tmp.getCargo();
-	return retVal;
+		//check target node's cargo hold
+		retVal = tmp.getCargo();
+		return retVal;
     }
 
 
@@ -148,8 +172,24 @@ public class LList implements List //your List interface must be in same dir
 
 	System.out.println( james );
 
-	james.add(2, "you're mom gay");
+	james.add(2, "you're mom");
 	System.out.println(james);
+
+	james.remove(2);
+	System.out.println(james);
+
+	james.remove(3);
+	System.out.println(james);
+
+	james.remove(0);
+	System.out.println(james);
+
+	james.add(0, "you");
+	System.out.println(james);
+
+	james.add(3, "GOD'S PLAN");
+	System.out.println(james);
+
     }
 
 }//end class LList

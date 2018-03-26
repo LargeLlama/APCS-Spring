@@ -23,6 +23,29 @@ public class DLLNode
 
 	public DLLNode getPrev() { return _prevNode; }
     //--------------^  ACCESSORS  ^--------------
+	
+    //--------------v  MUTATORS  v--------------
+	
+	public String setCargo(String newValue) {
+		String temp = _cargo;
+		_cargo = newValue;
+		return temp;
+	}
 
+	public DLLNode setNext (DLLNode newNext) {
+		DLLNode temp = getNext();
+		_nextNode = newNext;
+		return temp;
+	}
+
+	public DLLNode setPrev (DLLNode newPrev) {
+		DLLNode temp = getPrev();
+		_prevNode = newPrev;
+		return temp;
+	}
+
+	//--------------^  MUTATORS  ^--------------
+
+	public String toString() { return _cargo.toString(); }
 
 }//end class DLLNode

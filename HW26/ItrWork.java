@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-public class ItrWorkAL 
+public class ItrWork 
 {
     //using FOREACH loop
     //returns a boolean to indicate whether key is present in L

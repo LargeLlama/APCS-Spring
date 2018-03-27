@@ -31,9 +31,9 @@ public class ItrWork
     //returns a boolean to indicate whether key is present in L
     public static boolean foundB( Integer key, List<Integer> L ) 
     {
-		Iterator it = L.iterator();
+		Iterator<Integer> it = L.iterator();
 		while(it.hasNext()) {
-			Integer tmp = (Integer) it.next();
+			Integer tmp = it.next();
 			if (tmp.equals(key))
 				return true;
 		}
@@ -58,10 +58,10 @@ public class ItrWork
     public static List<Integer> oddsB( List<Integer> L ) 
     { 
 		ArrayList<Integer> retList = new ArrayList<Integer>();
-		Iterator it = L.iterator();
+		Iterator<Integer> it = L.iterator();
 
 		while(it.hasNext()) {
-			Integer tmp = (Integer) it.next();
+			Integer tmp = it.next();
 			if (tmp % 2 == 1)
 				retList.add(tmp);	
 		}
@@ -73,10 +73,10 @@ public class ItrWork
     //modifies L s.t. it contains no evens
     public static void removeEvens( List<Integer> L ) 
     {
-		Iterator it = L.iterator();
+		Iterator<Integer> it = L.iterator();
 
 		while(it.hasNext()) {
-			Integer tmp = (Integer) it.next();
+			Integer tmp = it.next();
 			if (tmp % 2 == 0)
 				it.remove();
 		} 

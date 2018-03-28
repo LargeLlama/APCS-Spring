@@ -4,7 +4,6 @@
  *    (ability to run a FOREACH loop over your LList)
  * Assumes local version of List.java, overriding Java built-in interface
  *****************************************************/
-
 public class V6Driver {
 
     public static void main( String[] args ) {

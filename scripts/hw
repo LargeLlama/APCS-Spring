@@ -7,7 +7,7 @@ CURR_DIR=$(pwd)
 
 cd '/home/rubin/APCS-2/HW'
 git add .
-git commit -m "Updating HW$HW_NUMBER"
+git commit -m "Update HW$HW_NUMBER"
 git pull
 git push
 

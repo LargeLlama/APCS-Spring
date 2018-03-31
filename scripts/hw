@@ -1,0 +1,14 @@
+#!/bin/bash
+# Script for pushing my HW repo
+
+HW_NUMBER=$1
+HW_DIR='/home/rubin/APCS-2/HW'
+CURR_DIR=$(pwd)
+
+cd '/home/rubin/APCS-2/HW'
+git add .
+git commit -m "Updating HW$HW_NUMBER"
+git pull
+git push
+
+cd "$CURR_DIR"

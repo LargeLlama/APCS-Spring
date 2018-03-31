@@ -1,0 +1,15 @@
+#!/bin/bash
+CURR_DIR=$(pwd)
+cd '/home/rubin/APCS-2/'
+
+for i in $(find . -name .git); do
+	cd "/home/rubin/APCS-2/$i"
+	cd ..
+	git pull
+	cd '/home/rubin/APCS-2/'
+
+cd "$CURR_DIR"
+
+done
+
+echo "Successfully updated all git repos in APCS-2 folder!"

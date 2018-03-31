@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# A script to condense the add, commit, and pushing in one command 
+
+COMMIT_MSG="$1"
+CURR_DIR="$(pwd)"
+
+cd "$CURR_DIR"
+git add .
+git commit -m "$COMMIT_MSG"
+git push
+
+echo "Successfully pushed!"
+
+

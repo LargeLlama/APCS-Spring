@@ -23,34 +23,50 @@ public class Latkes
   //means of insertion
   public void push( String s )
   {
-	
+
+	for(int i = 0; i < _stackSize; i++) {
+		if (_stack[i] == null) {
+			_stack[i] = s;
+			break;
+		}
+	}
+		
   }
 
   //means of removal
-  public String pop( )
+  public String pop()
   {
-
+	
   }
 
   //chk for emptiness
   public boolean isEmpty()
   {
-
+	return true;
   }
 
   //chk for fullness
   public boolean isFull()
   {
-
+	return true;
   }
 
+//==============HELPER================
+  public String printArray() {
+	String retString = "";
+	for (String s : _stack) 
+		retString += (s + ", ");
+	return retString;
+  }
+  public String toString() {
+	return printArray();
+  }
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       Latkes tastyStack = new Latkes(10);
-
+	  System.out.println(tastyStack);
       tastyStack.push("aoo");
       tastyStack.push("boo");
       tastyStack.push("coo");
@@ -63,6 +79,9 @@ public class Latkes
       tastyStack.push("joo");
       tastyStack.push("coocoo");
       tastyStack.push("cachoo");
+	
+	  System.out.println(tastyStack);
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
       //cachoo
       System.out.println( tastyStack.pop() );

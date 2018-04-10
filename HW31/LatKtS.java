@@ -21,9 +21,11 @@ public class LatKtS
   {
 	Latkes temp = new Latkes(s.length());
 	String retString = "";
+	int counter = 0;	
 
-	for (int i = 0; i < s.length(); i++) {
-		temp.push(s.substring(i, i + 1));
+	while(!temp.isFull()) {
+		temp.push(s.substring(counter, counter + 1));
+		counter++;
 	}
 
 	while (!temp.isEmpty()) {
@@ -41,7 +43,7 @@ public class LatKtS
    **********************************************************/
   public static boolean allMatched( String s )
   {
-	return true;	
+ 	return true;	
   }//end allMatched()
 
 

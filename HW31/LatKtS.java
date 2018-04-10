@@ -19,9 +19,15 @@ public class LatKtS
    **********************************************************/
   public static String flip( String s )
   {
+	Latkes temp = new Latkes(s.length());
 	String retString = "";
-	for (int i = s.length(); i > 0; i--) {
-		retString += s.substring(i - 1, i);
+
+	for (int i = 0; i < s.length(); i++) {
+		temp.push(s.substring(i, i + 1));
+	}
+
+	while (!temp.isEmpty()) {
+		retString += temp.pop();		
 	}
 	return retString;
   }//end flip()
@@ -35,7 +41,7 @@ public class LatKtS
    **********************************************************/
   public static boolean allMatched( String s )
   {
-	return true;
+	return true;	
   }//end allMatched()
 
 

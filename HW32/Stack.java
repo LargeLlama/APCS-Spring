@@ -9,6 +9,9 @@ public interface Stack<PANCAKE>
     //Return true if this stack is empty, otherwise false.
     public boolean isEmpty();
 
+	//Return true if this stack is full, otherwise false.
+	public boolean isFull();
+
     //Return top element of stack without popping it.
     public PANCAKE peek();
 

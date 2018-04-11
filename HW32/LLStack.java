@@ -17,6 +17,10 @@ public class LLStack<T> implements Stack<T> {
 		return _stackSize == 0;
 	}
 
+	public boolean isFull() {
+		return _stackSize == _stack.size();
+	}
+
 	public T peek() {
 		return _stack.get(_stackSize - 1);
 	}

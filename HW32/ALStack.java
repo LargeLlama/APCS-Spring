@@ -17,6 +17,10 @@ public class ALStack<T> implements Stack<T> {
 		return _stackSize == 0;
 	}
 
+	public boolean isFull() {
+		return _stackSize == _stack.size();
+	}
+
 	public T peek() {
 		return _stack.get(_stackSize - 1);
 	}
@@ -27,7 +31,8 @@ public class ALStack<T> implements Stack<T> {
 	}
 
 	public void push (T x) {
-		_stack.set(_stackSize, x);
+		_stack.add(x);
 		_stackSize++;
+		
 	}
 }

@@ -21,4 +21,7 @@ public interface Stack<PANCAKE>
     //Push an element onto top of this stack.
     public void	push( PANCAKE x );
 
+	//print stack
+	public String printStack();
+
 }//end interface

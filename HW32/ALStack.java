@@ -26,8 +26,12 @@ public class ALStack<T> implements Stack<T> {
 	}
 
 	public T pop() {
-		T temp = _stack.remove(_stackSize - 1);
-		return temp;
+		if(!isEmpty()) {
+			T temp = _stack.remove(_stackSize - 1);
+			_stackSize--;
+			return temp;
+		}
+		return null;
 	}
 
 	public void push (T x) {
@@ -35,4 +39,8 @@ public class ALStack<T> implements Stack<T> {
 		_stackSize++;
 		
 	}
+	public String printStack() {
+		return _stack.toString();
+	}
+	
 }

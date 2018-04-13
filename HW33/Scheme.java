@@ -8,12 +8,17 @@
  * Simulates a rudimentary Scheme interpreter
  * 
  * ALGORITHM for EVALUATING A SCHEME EXPRESSION:
- *   1. Steal underpants.
- *   2. ...
- *   5. Profit!
+ *	 THIS IS A RECURSIVE ALGORITHM!
+ *   1. Base case - check if there are no longer open parentheses - that means its been simplifed to the max
+		a. if so, simply return the input
+ *   2. Otherwise, find the innermost parentheses
+	 3. Unload the expression in the innermost parentheses
+	 4. Replace the expression in the original input with the result
+	 5. Run evaluate again on the simplified input
+ *   6. Profit!
  *
- * STACK OF CHOICE: ____ by ____
- * b/c ...
+ * STACK OF CHOICE: LList by library
+ * b/c it feels like the fact that we're working with the top most element in a stack means 
  ******************************************************/
 
 public class Scheme

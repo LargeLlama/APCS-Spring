@@ -39,5 +39,18 @@ public class NodeQueue<Quasar> implements Queue<Quasar> {
 	}
 
 	public static void main(String[] args) {	
+		NodeQueue<String> keke = new NodeQueue<String>();
+		
+		System.out.println("Empty?: " + keke.isEmpty());
+		keke.enqueue("ahh");
+		keke.enqueue("ehh");
+		keke.enqueue("ihh");
+		keke.enqueue("ohh");
+		keke.enqueue("uhh");
+		for(int i = 0; i < 5; i++) {
+			System.out.print(keke.dequeue() + " ");
+		}
+		System.out.println("\nEmpty? :" + keke.isEmpty()); 
+		
 	}	
 }

@@ -26,4 +26,13 @@ public class ALQueue<Quasar> implements Queue<Quasar> {
 	public Quasar peekFront() {
 		return _list.get(0);
 	}
+
+	public String toString() {
+		return _list.toString();
+	}
+
+	public static void main(String[] args) {
+		ALQueue<String> keke = new ALQueue<String>();
+				
+	}
 }

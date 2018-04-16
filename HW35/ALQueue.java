@@ -33,6 +33,20 @@ public class ALQueue<Quasar> implements Queue<Quasar> {
 
 	public static void main(String[] args) {
 		ALQueue<String> keke = new ALQueue<String>();
-				
+		System.out.println("Empty?: " + keke.isEmpty());
+		
+		keke.enqueue("ahh");				
+		keke.enqueue("ehh");
+		keke.enqueue("ihh");
+		keke.enqueue("ohh");
+		keke.enqueue("uhh");
+
+		System.out.println(keke);
+
+		while(!keke.isEmpty()) {
+			System.out.println("Removed: " + keke.dequeue());
+			System.out.println("Current State of keke: " + keke);
+		}
+		
 	}
 }

@@ -24,26 +24,29 @@ public class RQueue<T> implements Queue<T>
   //instance variables
   private LLNode<T> _front, _end;
   private int _size;
-
+  private boolean sampled;
 
   // default constructor creates an empty queue
   public RQueue() 
 	{ 
 		_front = null;
-		_end = null
+		_end = null;
 		_size = 0;
+		sampled = false;
 	}//end default constructor
 
 
   public void enqueue( T enQVal ) 
   {
-	if (this.isEmpty()) {
-		_front = new LLNode(enQVal, _end);
-		_end = _head;
+	if (isEmpty()) {
+		_front = new LLNode(enQVal, null);
+		_end = _front;
+		_size++;
 		return;
-	}	
+	}
 	_end.setNext( new LLNode(enQVal, _end.getNext()));
 	_end = _end.getNext();
+	_size++;
   }
 
 
@@ -51,13 +54,22 @@ public class RQueue<T> implements Queue<T>
   // assume _queue ! empty
   public T dequeue() 
   { 
-	
+	T temp = _front.getValue();
+	if (sampled) {
+		sampled = false;
+		_size--;
+		return temp;
+	}
+	sample();
+	_front = _front.getNext();
+	_size--;
+	return temp;
   }//end dequeue()
 
 
   public T peekFront() 
   {
-	
+	return _front.getValue();
   }
 
 
@@ -69,6 +81,14 @@ public class RQueue<T> implements Queue<T>
    ******************************************/
   public void sample () 
   {
+	int random = (int)(_size * Math.random());
+
+	for (int i = 0; i < random; i++) {
+		LLNode tmp = _front;
+		_front = _front.getNext();
+		enqueue(tmp.getValue());
+	}
+	
   }//end sample()
 
 
@@ -78,10 +98,21 @@ public class RQueue<T> implements Queue<T>
   } //O(?)
 
 
+  public T front() {
+	sampled = true;
+	sample();
+	return peekFront();
+  }
     // print each node, separated by spaces
   public String toString() 
   { 
-
+	LLNode tmp = _end;
+	String retString = "";
+	for (int i = 0; i < _size; i++) {
+		retString += tmp.getValue() + " ";
+		tmp = tmp.getNext();
+	}
+	return retString;
   }//end toString()
 
 
@@ -89,7 +120,6 @@ public class RQueue<T> implements Queue<T>
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
       Queue<String> PirateQueue = new RQueue<String>();
 
@@ -114,6 +144,8 @@ public class RQueue<T> implements Queue<T>
 
       System.out.println("\nnow dequeuing fr empty queue..."); 
       System.out.println( PirateQueue.dequeue() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+
 
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 

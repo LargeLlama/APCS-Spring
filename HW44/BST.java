@@ -1,7 +1,7 @@
 //Wubin Peco
 //APCS-2 pd02
-//hw42 yeet 
-//2018-04-30
+//hw44 so sad can we hit the mcdonalds drivethru on the way home 
+//2018-05-02
 
 /*****************************************************
  * class BST
